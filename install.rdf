@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:em="http://www.mozilla.org/2004/em-rdf#">  
+  <Description about="urn:mozilla:install-manifest">
+  
+	
+	<em:id>windows-contacts-loader@alexandersalas.name</em:id>
+	<em:version>0.3.8</em:version>
+	<em:type>2</em:type>
+	
+	<em:optionsURL>chrome://windows-contacts-loader/content/options.xul</em:optionsURL>
+	
+    <em:name>Windows Contacts Loader</em:name>
+	<em:description>Loads Windows Contacts</em:description> 	
+	<em:developer>Alexander Salas</em:developer>
+    <em:unpack>true</em:unpack>
+	
+	<em:targetApplication>
+		<Description>
+			<em:id>{33cb9019-c295-46dd-be21-8c4936574bee}</em:id>
+			<em:minVersion>0.2a1</em:minVersion>
+			<em:maxVersion>1.6a1pre</em:maxVersion>
+		</Description>
+	</em:targetApplication>
+	
+  </Description>      
+</RDF>

@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<!--***********************************************************************
+The contents of this file are Subject of the GNU GENERAL PUBLIC LICENSE 
+
+FileName:   options.xul
+Version:    V0.3.9
+Date:       2014-01-07
+Author original:     Andreas Schaller	email: schallera72@gmail.com
+Contributor:		Alexander Salas	 email: alexander.salas@gmail.com
+
+************************************************************************--> 
+<prefwindow id="windows-contacts-loader-prefs"
+	title="Windows-Contacts-Loader Options"
+	style="height: 310px; width: 700px"
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	<script type="application/x-javascript" src="chrome://windows-contacts-loader/content/WindowsContactsLoaderPreferences.js"></script> 
+	<prefpane id="wcldirectory" label="Contact Directory Settings">
+		<preferences>
+			<preference id="pref_wclDir" name="extensions.WindowsContactsLoader.contactDir" type="string" />
+			<preference id="pref_wclAB" name="extensions.WindowsContactsLoader.addrBook" type="string" />
+			<preference id="pref_wclOnLoad" name="extensions.WindowsContactsLoader.startOnLoad" type="bool" />
+			<preference id="pref_wclClear" name="extensions.WindowsContactsLoader.clearOnStart" type="bool" />
+			<preference id="pref_schedule_days" name="extensions.WindowsContactsLoader.scheduleDays" type="int" />
+		</preferences> 
+		
+		<groupbox>
+			<caption label="path and name"/>
+			<grid>			
+				<columns>
+					<column width="170"/>
+					<column flex="2"/>
+				</columns>			
+				<rows>			
+					<row align="center">
+						<label control="contact_directory" value="contacts directory:"/>
+						<textbox style="width: 350px" preference="pref_wclDir" id="contact_directory" maxlength="200" onchange="WindowsContactsLoaderPreferences.onChangeCD()" />
+						<button id= "getdir" label="get directory" oncommand="WindowsContactsLoaderPreferences.openFileDialog()"/>
+					</row>
+					<row align="center">
+						<label control="address_book" value="name of address book:"/>
+						<textbox style="width: 350px" preference="pref_wclAB" id="address_book" maxlength="100" onchange="WindowsContactsLoaderPreferences.onChangeAB()"/>					
+					</row>						
+				</rows>			
+			</grid>	
+		</groupbox>
+		
+		<groupbox>
+			<caption label="autoload"/>
+			<grid>		
+				<columns>
+					<column width="170"/>
+					<column width="20"/>
+					<column width="20"/>
+					<column width="20"/>
+					<column width="20"/>
+					<column width="20"/>
+					<column width="20"/>
+					<column width="20"/>
+				</columns> 
+				<rows>
+					<row align="center">
+						<label control="schedule_days" value="one load on start and day:"/>
+						<checkbox id="wclMon" label="Mon" oncommand="WindowsContactsLoaderPreferences.checkDays(this)"/>
+						<checkbox id="wclTue" label="Tue" oncommand="WindowsContactsLoaderPreferences.checkDays(this)"/>
+						<checkbox id="wclWed" label="Wed" oncommand="WindowsContactsLoaderPreferences.checkDays(this)"/>
+						<checkbox id="wclThu" label="Thu" oncommand="WindowsContactsLoaderPreferences.checkDays(this)"/>
+						<checkbox id="wclFri" label="Fri" oncommand="WindowsContactsLoaderPreferences.checkDays(this)"/>
+						<checkbox id="wclSat" label="Sat" oncommand="WindowsContactsLoaderPreferences.checkDays(this)"/>
+						<checkbox id="wclSun" label="Sun" oncommand="WindowsContactsLoaderPreferences.checkDays(this)"/>				
+					</row>			
+					<row align="center">
+						<label control="start_onLoad" value="allways load on starting TB:"/>
+						<checkbox id="start_onLoad" preference="pref_wclOnLoad"  />                    
+					</row>					
+				</rows>
+			</grid>
+		</groupbox>
+		
+		<groupbox>
+			<caption label="delete"/>
+			<grid>		
+				<columns>
+					<column width="170"/>
+					<column width="20"/>
+				</columns> 
+				<rows>
+					<row align="center">
+						<label control="clear_onStart" value="clear address book before load:"/>
+						<checkbox id="clear_onStart" preference="pref_wclClear"  />
+					</row>
+				</rows>
+			</grid>
+		</groupbox>		
+		
+		<box style="width: 100px">
+			<button id="reset" style="margin-top: 10px" label="reset" oncommand="WindowsContactsLoaderPreferences.reset()"/>			
+		</box>
+	</prefpane>
+</prefwindow>

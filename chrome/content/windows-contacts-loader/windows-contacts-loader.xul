@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+ The contents of this file are Subject of the GNU GENERAL PUBLIC LICENSE
+
+ Filename:  windows-contacts-loader.xul
+ Version:   V0.3.8
+ Date:      20121-11-17
+ Author:    Andreas Schaller	email: schallera72@gmail.com
+  -->
+
+<!DOCTYPE overlay SYSTEM "chrome://windows-contacts-loader/locale/windows-contacts-loader.dtd">
+
+<overlay id="WindowsContactsLoaderOverlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	<script type="application/x-javascript" src="chrome://windows-contacts-loader/content/WindowsContactsLoaderPreferences.js"/>
+	<script type="application/x-javascript" src="chrome://windows-contacts-loader/content/WindowsContactsLoaderMainClass.js"/>
+	<script type="application/x-javascript" src="chrome://windows-contacts-loader/content/WindowsContactsLoaderClass.js"/>
+	<menupopup id="toolsMenuPopup">
+		<menuitem
+		id="windows-contact-loader-menuitem"
+		label="&LoadWindowsContacts;"
+		insertbefore="menu_preferences"
+		oncommand="WindowsContactsLoaderMainClass.LoadContacts()"
+		collapsed="true"/>
+	</menupopup>  
+</overlay>

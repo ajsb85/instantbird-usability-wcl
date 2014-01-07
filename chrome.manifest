@@ -1,0 +1,8 @@
+content windows-contacts-loader chrome/content/windows-contacts-loader/
+skin windows-contacts-loader photos photos/
+
+locale  windows-contacts-loader en-en chrome/locale/en-en/windows-contacts-loader/
+locale  windows-contacts-loader de-de chrome/locale/de-de/windows-contacts-loader/
+
+overlay chrome://instantbird/content/menus.xul chrome://windows-contacts-loader/content/windows-contacts-loader.xul
+
