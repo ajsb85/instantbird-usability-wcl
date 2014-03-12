@@ -1,5 +1,7 @@
 content windows-contacts-loader chrome/content/windows-contacts-loader/
+skin windows-contacts-loader     classic/1.0 chrome/skin/
 skin windows-contacts-loader photos photos/
+
 
 locale  windows-contacts-loader en-en chrome/locale/en-en/windows-contacts-loader/
 locale  windows-contacts-loader de-de chrome/locale/de-de/windows-contacts-loader/
